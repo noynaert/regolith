@@ -4,14 +4,17 @@
 
 # This defines which key super maps to on your keyboard.
 # Alt key is Mod1, and Windows key is Mod4
-set $mod Mod4
-set $alt Mod1
+#set $mod Mod4
+#set $alt Mod1
+set $mod Mod1
+set $alt Mod4
 
 # i3xrocks config file. Override this for custom status indicators on the bar.
 set $i3xrocks_config /etc/regolith/i3xrocks/config
 
 # path to terminal. Override this to specify a custom terminal.
-set $terminal_path /usr/bin/st
+#set $terminal_path /usr/bin/st
+set $terminal_path /usr/bin/terminator
 
 # Color values are defined in ~/.Xresources-regolith
 # These are the labels which define each i3 workspace.
@@ -354,3 +357,26 @@ exec --no-startup-id /usr/bin/regolith-ftue
 
 # Hide the mouse pointer if unused for a duration
 exec --no-startup-id /usr/bin/unclutter -b
+
+# My bindings
+
+bindsym Mod4+g exec /usr/bin/google-chrome
+bindsym Mod4+f exec /usr/bin/firefox
+bindsym Mod4+c exec /usr/bin/code
+bindsym Mod4+o exec /usr/bin/obs workspace 1
+bindsym Mod4+n exec /usr/bin/nautilus
+bindsym Mod4+z exec /usr/bin/zoom
+# jump to last used workspace
+bindsym mod1+grave workspace back_and_forth
+
+
+#add flameshot for screen capture.
+#be sure to add flameshot and mkdir ~/Picture/screenshots or adapt the binding
+
+bindsym PRINT exec flameshot gui -p ~/Pictures/screenshots
+
+# bind Krusader
+    bindsym Mod4+k exec /usr/bin/krusader
+
+# set wallpaper
+# exec_always feh --bg-scale ~/.config/i3/wallpaper.jpg
